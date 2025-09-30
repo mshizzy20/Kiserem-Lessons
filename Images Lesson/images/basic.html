@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Styling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Responsive Image Styling</h1>
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+      <ul>
+        <li><a href="#toc">TOC</a></li>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TOC -->
+  <div id="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#side-by-side">Side by Side Images</a></li>
+      <li><a href="#overlay">Overlay Image</a></li>
+      <li><a href="#hover">Hover Image</a></li>
+      <li><a href="#swap">Image Swap</a></li>
+      <!-- <li><a href="#map">Image Map</a></li> -->
+      <li><a href="#picture">Picture Element</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      
+    </ul>
+
+    <!-- Mobile dropdown -->
+    <select onchange="location = this.value;">
+      <option value="">Go to section...</option>
+      <option value="#side-by-side">Side by Side Images</option>
+      <option value="#overlay">Overlay Image</option>
+      <option value="#hover">Hover Image</option>
+      <!-- <option value="#swap">Image Swap</option> -->
+      <option value="#map">Image Map</option>
+      <option value="#picture">Picture Element</option>
+      <option value="#gallery">Gallery</option>
+      
+    </select>
+  </div>
+
+  <!-- SIDE BY SIDE -->
+  <section id="side-by-side">
+    <h2>Side by Side Images</h2>
+    <div class="side-by-side">
+      <img src="toy1.jpg" alt="toy 1">
+      <img src="toy2.jpg" alt="toy 2">
+    </div>
+  </section>
+
+  <!-- OVERLAY -->
+  <section id="overlay">
+  <h2>Overlay Image</h2>
+  <p>displays a text once the cursor hovers over the image</p>
+  <div class="overlay-container">
+    <img src="toy4.jpg" alt="Overlay Example" class="overlay-img">
+    <div class="overlay-text">This is a very fun toy</div>
+  </div>
+</section>
+
+
+  <!-- HOVER -->
+  <section id="hover">
+    <h2>Hover Image</h2>
+    <p>image becomes bigger once the cursor hovers over it</p>
+    <div class="hover-container">
+      <img src="toy1.jpg" class="hover-img" alt="Hover effect">
+    </div>
+  </section>
+
+  <!-- IMAGE SWAP -->
+  <section id="swap">
+    <h2>Image Swap</h2>
+    <p>displays two images of the same products when you hove the cursor over it</p>
+    
+    <img id="swap-img" src="toy1.jpg" 
+         onmouseover="this.src='toy2.jpg'" 
+         onmouseout="this.src='toy1.jpg'" alt="Swap Image">
+  </section>
+
+  <!-- IMAGE MAP -->
+  <!-- <section id="map">
+    <h2>Image Map</h2>
+    <p> An image map is an image with clickable areas. The areas are defined with one or more <code>&lt;area&gt;</code> tags.</p>
+    <img src="workplace.jpg" alt="Office" usemap="#office-map" class="map-img">
+    <map name="office-map">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.html">
+      <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.html">
+      <area shape="poly" coords="400,50,450,150,550,100,500,30" alt="Phone" href="phone.html">
+    </map>
+  </section> -->
+
+
+
+  <!-- PICTURE ELEMENT -->
+  <section id="picture">
+    <h2>Picture Element</h2>
+    <picture>
+      <source media="(max-width: 600px)" srcset="toy3.jpg">
+      <source media="(max-width: 1200px)" srcset="toy2.jpg">
+      <img src="toy4.jpg" alt="Responsive picture" class="picture-img">
+    </picture>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+      <img src="toy1.jpg" alt="Gallery 1" class="toy1">
+      <img src="toy2.jpg" alt="Gallery 2" class="toy2-img">
+      <img src="toy1.jpg" alt="Gallery 3" class="toy1-img">
+      <img src="toy1.jpg" alt="Gallery 4" class="toy1-img">
+    </div>
+  </section>
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Responsive Images Lesson</p>
+  </footer>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.onload = function () {
+    if (typeof imageMapResize === "function") {
+      imageMapResize(); // ensures clickable areas resize with the image
+    }
+  };
+</script> -->
+
+
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
