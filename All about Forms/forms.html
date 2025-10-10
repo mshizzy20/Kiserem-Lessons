@@ -210,6 +210,52 @@
     <p id="thankYouMessage"></p>
   </section>
 
+  <!-- 🧠 QUIZ SECTION -->
+<section id="quiz">
+  <h2>🧠 Forms Review Quiz</h2>
+  <p>Let’s see how much you remember about HTML forms!</p>
+
+  <form id="formQuiz">
+    <ol>
+      <li>
+        <p>Which tag is used to create a form in HTML?</p>
+        <label><input type="radio" name="q1" value="form"> &lt;form&gt;</label>
+        <label><input type="radio" name="q1" value="input"> &lt;input&gt;</label>
+      </li>
+
+      <li>
+        <p>Which attribute connects a label to an input field?</p>
+        <label><input type="radio" name="q2" value="for"> for</label>
+        <label><input type="radio" name="q2" value="link"> link</label>
+      </li>
+
+      <li>
+        <p>Which input type is used for passwords?</p>
+        <label><input type="radio" name="q3" value="password"> type="password"</label>
+        <label><input type="radio" name="q3" value="secret"> type="secret"</label>
+      </li>
+
+      <li>
+        <p>Which tag creates a dropdown list?</p>
+        <label><input type="radio" name="q4" value="select"> &lt;select&gt;</label>
+        <label><input type="radio" name="q4" value="list"> &lt;list&gt;</label>
+      </li>
+
+      <li>
+        <p>Which tag sends the form data?</p>
+        <label><input type="radio" name="q5" value="submit"> &lt;input type="submit"&gt;</label>
+        <label><input type="radio" name="q5" value="send"> &lt;send&gt;</label>
+      </li>
+    </ol>
+
+    <button type="button" onclick="checkFormQuiz()">Check Answers ✅</button>
+    <button type="button" onclick="resetFormQuiz()">Reset Quiz 🔄</button>
+  </form>
+
+  <p id="quizResult"></p>
+</section>
+
+
   <!-- 🌈 Summary Notes Section -->
 <section id="summary">
   <h2>🎉 Summary Notes: What We Learned About Forms!</h2>
@@ -240,9 +286,12 @@
 
    <div class="next-lesson">
     <p>✨ Ready to explore more?</p>
-    <a href="media.html" class="next-btn">🎥 Next Lesson: HTML Media Types 🎧</a>
+    <a href="/All about media types and emojis/media.html" class="next-btn">🎥 Next Lesson: HTML Media Types 🎧</a>
   </div>
 </section>
+
+
+
 
   </main>
 
@@ -412,6 +461,42 @@
       const message = document.getElementById("thankYouMessage");
       message.textContent = `Thanks ${name}! 🌸 You rated us "${rating}" — your feedback helps us grow! 💪`;
     });
+
+    // ---------- Quiz Section ----------
+
+  function checkFormQuiz() {
+    let score = 0;
+
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    const q4 = document.querySelector('input[name="q4"]:checked');
+    const q5 = document.querySelector('input[name="q5"]:checked');
+
+    if (q1 && q1.value === "form") score++;
+    if (q2 && q2.value === "for") score++;
+    if (q3 && q3.value === "password") score++;
+    if (q4 && q4.value === "select") score++;
+    if (q5 && q5.value === "submit") score++;
+
+    const result = document.getElementById("quizResult");
+    result.innerHTML = `🎯 You scored ${score}/5!`;
+
+    if (score === 5) {
+      result.innerHTML += " Excellent job, Forms Master! 🏆";
+    } else if (score >= 3) {
+      result.innerHTML += " Great effort! Review the parts you missed 💪";
+    } else {
+      result.innerHTML += " Keep practicing, you’re doing great! 🌱";
+    }
+  }
+
+  function resetFormQuiz() {
+    const radios = document.querySelectorAll('#formQuiz input[type="radio"]');
+    radios.forEach(radio => (radio.checked = false));
+    document.getElementById("quizResult").innerHTML = "";
+    alert("Quiz reset! Try again 🧠✨");
+  }
 
     // optional: smooth scroll for TOC links (modern browsers handle via CSS scroll-behavior)
     document.querySelectorAll('.toc a').forEach(link => {
