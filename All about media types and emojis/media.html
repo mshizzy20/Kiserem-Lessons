@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Media Lesson 🎬</title>
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+  <header>
+    <h1>🎵🎥 HTML Media Lesson</h1>
+    <p>Welcome back, young coders! Today we’ll explore how to add <strong>images, audio, video, and emojis</strong> to make your website super fun! 🌟</p>
+  </header>
+
+  <nav>
+  <button onclick="window.location.href='../All about Forms/forms.html'">⬅️ Back to Forms Lesson</button>
+</nav>
+
+  <main>
+    <section id="toc">
+      <h2>📚 Table of Contents</h2>
+      <ul>
+        <li><a href="#images">Images 🖼️</a></li>
+        <li><a href="#audio">Audio 🎵</a></li>
+        <li><a href="#video">Video 🎥</a></li>
+        <li><a href="#emojis">Emojis 😄</a></li>
+        <li><a href="#quiz">Quiz Time 🎯</a></li>
+      </ul>
+    </section>
+
+    <!-- IMAGES SECTION -->
+    <section id="images">
+      <h2>🖼️ Adding Images</h2>
+      <p>We use the <code>&lt;img&gt;</code> tag to display images in HTML.</p>
+      <pre><code>&lt;img src="image.jpg" alt="Description"&gt;</code></pre>
+      <p>Example:</p>
+      <img src="https://picsum.photos/300/200" alt="Random Image Example">
+    </section>
+
+    <!-- AUDIO SECTION -->
+    <section id="audio">
+      <h2>🎵 Adding Audio</h2>
+      <p>We use the <code>&lt;audio&gt;</code> tag to play sounds or music. Don’t forget to include the <code>controls</code> attribute so users can play, pause, or stop the sound.</p>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+      <p>Example:</p>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="video">
+      <h2>🎥 Adding Video</h2>
+      <p>To include videos, use the <code>&lt;video&gt;</code> tag and include <code>controls</code> to play, pause, or adjust the volume.</p>
+      <pre><code>&lt;video controls width="320"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+      <p>Example:</p>
+      <video width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- EMOJI SECTION -->
+    <section id="emojis">
+      <h2>😄 Adding Emojis</h2>
+      <p>Emojis make your webpage come alive! You can add them directly (like 😍) or use their HTML code.</p>
+      <pre><code>&amp;#128512; = 😀</code></pre>
+      <p>Example:</p>
+      <p>Here are some fun emojis: 🍕⚽🎈🌍💻</p>
+    </section>
+
+    <!-- QUIZ SECTION -->
+   <section id="quiz">
+  <h2>🧠 Quick Review Quiz</h2>
+  <p>Let’s see what you remember!</p>
+  <form id="quizForm">
+    <ol>
+      <li>
+        <p>Which tag is used to display an image?</p>
+        <label><input type="radio" name="q1" value="img"> &lt;img&gt;</label>
+        <label><input type="radio" name="q1" value="audio"> &lt;audio&gt;</label>
+      </li>
+      <li>
+        <p>Which tag is used for videos?</p>
+        <label><input type="radio" name="q2" value="video"> &lt;video&gt;</label>
+        <label><input type="radio" name="q2" value="iframe"> &lt;iframe&gt;</label>
+      </li>
+      <li>
+        <p>How do you add emojis to your website?</p>
+        <label><input type="radio" name="q3" value="unicode"> Using Unicode values or directly typing them</label>
+        <label><input type="radio" name="q3" value="div"> With a &lt;div&gt; tag</label>
+      </li>
+    </ol>
+    <button type="button" onclick="checkAnswers()">Check Answers ✅</button>
+    <button type="button" onclick="resetQuiz()">Reset Quiz 🔄</button>
+  </form>
+  <p id="quizResult"></p>
+</section>
+
+  </main>
+
+  <nav class="lesson-navigation">
+  <button onclick="window.location.href='bootstrap/bootstrap.html'">➡️ Next Lesson: Introduction to Bootstrap</button>
+</nav>
+
+  <footer>
+    <p>🎓 Keep learning, keep coding! You’re doing amazing! 💪💻</p>
+  </footer>
+
+ <script>
+  function checkAnswers() {
+    let score = 0;
+
+    // Get selected answers
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const q3 = document.querySelector('input[name="q3"]:checked');
+
+    if (q1 && q1.value === "img") score++;
+    if (q2 && q2.value === "video") score++;
+    if (q3 && q3.value === "unicode") score++;
+
+    const result = document.getElementById("quizResult");
+    result.innerHTML = `🎉 You scored ${score}/3!`;
+
+    if (score === 3) {
+      result.innerHTML += " Excellent job, star coder! 🌟";
+    } else if (score === 2) {
+      result.innerHTML += " Great effort — almost perfect! 💪";
+    } else {
+      result.innerHTML += " Keep learning, you’ve got this! 🚀";
+    }
+  }
+
+  function resetQuiz() {
+    // Clear all selected answers
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => (radio.checked = false));
+
+    // Clear result text
+    document.getElementById("quizResult").innerHTML = "";
+
+    // Optional: show a friendly message
+    alert("Quiz reset! Try again 🧠✨");
+  }
+</script>
+
+
+
+
+</body>
+</html>

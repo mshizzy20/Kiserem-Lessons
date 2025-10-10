@@ -1,0 +1,91 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6c63ff;
+  color: white;
+  text-align: center;
+  padding: 1.5em;
+}
+
+nav {
+  text-align: center;
+  margin: 1em;
+}
+
+button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5548d0;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+img, video, audio {
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Next lesson Button styling */
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  padding: 10px;
+}
+
+.lesson-navigation button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lesson-navigation button:hover {
+  background-color: #0056b3;
+}
+
+
+footer {
+  text-align: center;
+  background: #6c63ff;
+  color: white;
+  padding: 1em;
+  margin-top: 2em;
+}
