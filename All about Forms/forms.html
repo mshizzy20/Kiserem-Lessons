@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fun with HTML Forms!</title>
+  <link rel="stylesheet" href="forms.css" />
+</head>
+<body>
+  <header>
+    <h1>🎨 Fun with HTML Forms!</h1>
+    <p>Learn and play while making forms — hello, orders, bookings, sign-up and login!</p>
+  </header>
+
+  <nav class="toc">
+    <h2>📚 Jump to</h2>
+    <ul>
+      <li><a href="#hello">1. Hello Form</a></li>
+      <li><a href="#jersey">2. Football Jersey</a></li>
+      <li><a href="#hotel">3. Hotel Booking</a></li>
+      <li><a href="#account">4. Sign Up & Login</a></li>
+      <li><a href="#food">5. Food Ordering</a></li>
+       <li><a href="#feedback">6. Feedback</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 1) Hello -->
+   <section id="hello-form">
+       <h1>👋 Say Hello Form!</h1>
+    <p>Let’s learn how forms work in HTML. Fill in your name and click the button to say hello! 🌟</p>
+      <form id="helloForm">
+        <label for="helloName">💬 What’s your name?</label>
+        <input id="helloName" type="text" placeholder="Type your name..." required>
+
+        <label for="helloColor">Pick a color</label>
+        <input id="helloColor" type="color" value="#ff6f61">
+
+        <button type="submit">Say Hello 👋</button>
+      </form>
+      <p id="helloOutput" class="output"></p>
+    </section>
+     
+
+    <!-- 2) Jersey -->
+     <section id="jersey-form">
+    <h1>⚽ Design Your Football Jersey!</h1>
+    <p>Let’s use checkboxes, radio buttons, and color inputs to create your dream jersey! 💚</p>
+
+    <form id="jerseyForm">
+      <!-- Text Input -->
+      <label for="playerName">👕 Player Name:</label>
+      <input type="text" id="playerName" name="playerName" placeholder="Enter your name" required>
+
+      <!-- Radio Buttons -->
+      <p>📏 Choose your jersey size:</p>
+      <label><input type="radio" name="size" value="Small"> Small</label>
+      <label><input type="radio" name="size" value="Medium" checked> Medium</label>
+      <label><input type="radio" name="size" value="Large"> Large</label>
+
+      <!-- Checkbox Group -->
+      <p>✨ Add special features to your jersey:</p>
+      <label><input type="checkbox" name="feature" value="Name Printing"> Name Printing</label>
+      <label><input type="checkbox" name="feature" value="Number Printing"> Number Printing</label>
+      <label><input type="checkbox" name="feature" value="Captain Band"> Captain Band</label>
+      <label><input type="checkbox" name="feature" value="Sponsor Logo"> Sponsor Logo</label>
+
+      <!-- Color Picker -->
+      <p>🎨 Choose your jersey color:</p>
+      <input type="color" id="jerseyColor" name="jerseyColor" value="#00bfa5">
+
+      <!-- Submit Button -->
+      <button type="submit">Show My Jersey 😎</button>
+    </form>
+
+    <p id="jerseyMessage"></p>
+  </section>
+
+    <!-- 3) Hotel -->
+    <section id="hotel" class="card">
+      <h2>🏨 Hotel Booking Form</h2>
+      <p>Book a room at SunnyStay!</p>
+      <form id="hotelForm">
+        <label for="guestName">Guest name</label>
+        <input id="guestName" type="text" required>
+
+        <label for="checkinDate">Check-in</label>
+        <input id="checkinDate" type="date" required>
+
+        <label for="checkoutDate">Check-out</label>
+        <input id="checkoutDate" type="date" required>
+
+        <label for="roomType">Room type</label>
+        <select id="roomType">
+          <option>Single</option>
+          <option>Double</option>
+          <option>Family Suite</option>
+        </select>
+
+        <button type="submit">Book Now 🏖️</button>
+      </form>
+      <p id="hotelOutput" class="output"></p>
+    </section>
+
+    <!-- 4) Sign Up & Login with Toggle -->
+    <section id="account" class="card">
+      <h2>🔐 Sign Up & Login</h2>
+      <p>Switch between Sign Up and Login using the buttons below.</p>
+
+      <div class="auth-wrapper">
+        <div class="toggle">
+          <button id="toggleSignup" class="toggle-btn active" type="button">📝 Sign Up</button>
+          <button id="toggleLogin" class="toggle-btn" type="button">🔑 Login</button>
+        </div>
+
+        <div id="signupBox" class="auth-box">
+          <form id="signupForm">
+            <label for="signupUser">Full name</label>
+            <input id="signupUser" type="text" placeholder="Your name" required>
+
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" placeholder="you@example.com" required>
+
+            <label for="signupPass">Create password</label>
+            <input id="signupPass" type="password" placeholder="Make it strong" required>
+
+            <button type="submit">Create Account 🌟</button>
+          </form>
+        </div>
+
+        <div id="loginBox" class="auth-box hidden">
+          <form id="loginForm">
+            <label for="loginUser">Email</label>
+            <input id="loginUser" type="email" placeholder="you@example.com" required>
+
+            <label for="loginPass">Password</label>
+            <input id="loginPass" type="password" placeholder="Your password" required>
+
+            <button type="submit">Login 🚪</button>
+          </form>
+        </div>
+      </div>
+
+      <p id="authOutput" class="output"></p>
+    </section>
+
+    <!-- 5) Food Ordering -->
+    <section id="food" class="card">
+      <h2>🍔 Food Ordering Form</h2>
+      <p>Order a meal — pick meal, drink, quantity and delivery address.</p>
+      <form id="foodForm">
+        <label for="mealSelect">Choose a meal</label>
+        <select id="mealSelect">
+          <option>Burger</option>
+          <option>Pizza</option>
+          <option>Pasta</option>
+          <option>Salad</option>
+        </select>
+
+        <label for="drinkSelect">Choose a drink</label>
+        <select id="drinkSelect">
+          <option>Water</option>
+          <option>Soda</option>
+          <option>Juice</option>
+        </select>
+
+        <label for="qtyInput">Quantity</label>
+        <input id="qtyInput" type="number" min="1" value="1">
+
+        <label for="addressInput">Delivery address</label>
+        <input id="addressInput" type="text" placeholder="Street, City" required>
+
+        <button type="submit">Order Now 🍽️</button>
+      </form>
+      <p id="foodOutput" class="output"></p>
+    </section>
+
+    <!-- 6) Feedback -->
+     <section id="feedback-form">
+    <h1>💬 We’d Love Your Feedback!</h1>
+    <p>Help us make the website even better — tell us what you think! 🌟</p>
+
+    <form id="feedbackForm">
+      <!-- Name -->
+      <label for="name">🧒 Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <!-- Email -->
+      <label for="email">📧 Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <!-- Select Menu -->
+      <label for="rating">⭐ How was your experience?</label>
+      <select id="rating" name="rating" required>
+        <option value="">Choose one...</option>
+        <option value="awesome">It was awesome! 😍</option>
+        <option value="good">Pretty good 😊</option>
+        <option value="okay">It was okay 😐</option>
+        <option value="bad">Could be better 😅</option>
+      </select>
+
+      <!-- Textarea -->
+      <label for="comments">💭 Your Comments:</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Type your message here..." required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">Send Feedback 💌</button>
+    </form>
+
+    <p id="thankYouMessage"></p>
+  </section>
+
+  <!-- 🌈 Summary Notes Section -->
+<section id="summary">
+  <h2>🎉 Summary Notes: What We Learned About Forms!</h2>
+  <p>
+    🌟 <strong>Forms are the way we talk to websites!</strong><br>
+    They help users send information like names, bookings, and orders to the website.
+  </p>
+  <p>
+    🧠 <strong>Key things to remember:</strong><br>
+    ✅ Use the <code>&lt;form&gt;</code> tag to start your form.<br>
+    ✅ Always use <code>&lt;label&gt;</code> for each input — it tells users what to type.<br>
+    ✅ <code>&lt;input&gt;</code> is for typing information (text, email, password, etc.).<br>
+    ✅ <code>&lt;select&gt;</code> lets users choose from a list (like selecting a food item).<br>
+    ✅ <code>&lt;textarea&gt;</code> is for longer text — like comments or special instructions.<br>
+    ✅ Don’t forget a <code>&lt;button&gt;</code> to submit your form! 🚀
+  </p>
+  <p>
+    🍕 <strong>Fun Forms We Created:</strong><br>
+    • Hello Form – to say hi 👋<br>
+    • Football Jersey Form – to pick your team ⚽<br>
+    • Hotel Booking Form – to book your dream room 🏨<br>
+    • Sign Up & Login Form – to join our club 💻<br>
+    • Food Order Form – to choose yummy meals 🍔🍟
+  </p>
+  <p>
+    💬 <strong>Pro Tip:</strong> Always check your form fields are labeled, styled, and responsive so they look great on phones too! 📱💻
+  </p>
+  
+   <div class="next-lesson">
+    <p>✨ Ready to explore more?</p>
+    <a href="media.html" class="next-btn">🎥 Next Lesson: HTML Media Types 🎧</a>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>🎉 Great job! Keep experimenting and have fun coding. — Made with ❤️</p>
+  </footer>
+
+  <!-- All JS embedded here -->
+  <script>
+    // ---------- Helpers ----------
+    function showTemporaryMessage(el, text, color = '#006600', duration = 4000) {
+      el.textContent = text;
+      el.style.color = color;
+      el.classList.add('show');
+      setTimeout(() => {
+        el.classList.remove('show');
+        // keep message visible text cleared so no stale text
+        setTimeout(() => { el.textContent = ''; }, 300);
+      }, duration);
+    }
+
+    // ---------- Hello Form ----------
+    const helloForm = document.getElementById('helloForm');
+    helloForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('helloName').value.trim();
+      const color = document.getElementById('helloColor').value;
+      const out = document.getElementById('helloOutput');
+      showTemporaryMessage(out, `Hello, ${name}! 🎈Welcome to the world of HTML forms!`, color);
+      helloForm.reset();
+    });
+
+    // ---------- Jersey Form ----------
+    const jerseyForm = document.getElementById('jerseyForm');
+    jerseyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const team = document.getElementById('teamName').value.trim();
+      const number = document.getElementById('jerseyNumber').value;
+      const color = document.getElementById('jerseyColor').value;
+      const size = document.getElementById('jerseySize').value;
+      const out = document.getElementById('jerseyOutput');
+
+      // display message and show color swatch
+      showTemporaryMessage(out, `🎽 Ordered: ${team} #${number} (Size: ${size})`, '#004d40');
+      // small visual: set color of word "Jersey" inside output (simple)
+      out.style.borderLeft = `6px solid ${color}`;
+      setTimeout(() => { out.style.borderLeft = 'none'; }, 2000);
+      jerseyForm.reset();
+    });
+
+    // ---------- Hotel Form ----------
+    const hotelForm = document.getElementById('hotelForm');
+    hotelForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const guest = document.getElementById('guestName').value.trim();
+      const checkin = document.getElementById('checkinDate').value;
+      const checkout = document.getElementById('checkoutDate').value;
+      const room = document.getElementById('roomType').value;
+      const out = document.getElementById('hotelOutput');
+
+      // basic validation: check-in <= check-out
+      if (checkin && checkout && (new Date(checkin) > new Date(checkout))) {
+        showTemporaryMessage(out, '⚠️ Check-out must be after check-in.', '#b71c1c', 3500);
+        return;
+      }
+
+      showTemporaryMessage(out, `🏨 Thanks ${guest}! Your ${room} is booked (${checkin} → ${checkout}).`);
+      hotelForm.reset();
+    });
+
+    // ---------- Sign-up & Login Toggle ----------
+    const toggleSignup = document.getElementById('toggleSignup');
+    const toggleLogin = document.getElementById('toggleLogin');
+    const signupBox = document.getElementById('signupBox');
+    const loginBox = document.getElementById('loginBox');
+    const authOutput = document.getElementById('authOutput');
+
+    function showSignupView() {
+      signupBox.classList.remove('hidden');
+      loginBox.classList.add('hidden');
+      toggleSignup.classList.add('active');
+      toggleLogin.classList.remove('active');
+      document.getElementById('signupUser').focus();
+    }
+    function showLoginView() {
+      signupBox.classList.add('hidden');
+      loginBox.classList.remove('hidden');
+      toggleLogin.classList.add('active');
+      toggleSignup.classList.remove('active');
+      document.getElementById('loginUser').focus();
+    }
+
+    toggleSignup.addEventListener('click', showSignupView);
+    toggleLogin.addEventListener('click', showLoginView);
+
+    // ---------- Simple in-memory "database" ----------
+    // (for the playground only — not persistent)
+    const userDB = {};
+
+    // Sign-up handler
+    const signupForm = document.getElementById('signupForm');
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupUser').value.trim();
+      const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+      const pass = document.getElementById('signupPass').value;
+
+      if (!name || !email || !pass) {
+        showTemporaryMessage(authOutput, 'Please fill all sign-up fields.', '#b71c1c');
+        return;
+      }
+      if (userDB[email]) {
+        showTemporaryMessage(authOutput, 'That email already has an account. Try logging in.', '#b71c1c');
+        return;
+      }
+
+      userDB[email] = { name, pass };
+      showTemporaryMessage(authOutput, `🎉 Account created for ${name}! Now log in.`, '#2e7d32');
+      signupForm.reset();
+      // switch to login view after short delay
+      setTimeout(showLoginView, 800);
+    });
+
+    // Login handler
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginUser').value.trim().toLowerCase();
+      const pass = document.getElementById('loginPass').value;
+      const user = userDB[email];
+
+      if (user && user.pass === pass) {
+        showTemporaryMessage(authOutput, `✅ Welcome back, ${user.name}!`, '#1b5e20');
+        loginForm.reset();
+      } else {
+        showTemporaryMessage(authOutput, '❌ Incorrect email or password. Try again.', '#b71c1c');
+      }
+    });
+
+    // Initialize view (show signup by default)
+    showSignupView();
+
+    // ---------- Food Ordering Form ----------
+    const foodForm = document.getElementById('foodForm');
+    foodForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const meal = document.getElementById('mealSelect').value;
+      const drink = document.getElementById('drinkSelect').value;
+      const qty = parseInt(document.getElementById('qtyInput').value, 10) || 1;
+      const address = document.getElementById('addressInput').value.trim();
+      const out = document.getElementById('foodOutput');
+
+      if (!address) {
+        showTemporaryMessage(out, 'Please enter a delivery address.', '#b71c1c');
+        return;
+      }
+
+      showTemporaryMessage(out, `🍽️ Order: ${qty} x ${meal} with ${drink}. Heading to: ${address}`);
+      foodForm.reset();
+    });
+
+    // ---------- Feedback Form ----------
+     document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const rating = document.getElementById("rating").value;
+      const message = document.getElementById("thankYouMessage");
+      message.textContent = `Thanks ${name}! 🌸 You rated us "${rating}" — your feedback helps us grow! 💪`;
+    });
+
+    // optional: smooth scroll for TOC links (modern browsers handle via CSS scroll-behavior)
+    document.querySelectorAll('.toc a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
