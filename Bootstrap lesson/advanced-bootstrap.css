@@ -1,0 +1,28 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
+}
+
+h2 {
+  color: #198754;
+  margin-bottom: 10px;
+}
+
+.lesson-navigation button {
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.quiz-btn {
+  margin: 5px;
+}

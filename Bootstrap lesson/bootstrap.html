@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson: Introduction to Bootstrap 5</title>
+
+  <!-- ✅ Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- ✅ External Styles -->
+  <link rel="stylesheet" href="bootstrap.css" />
+</head>
+<body>
+  <header class="text-center py-4 bg-primary text-white">
+    <h1>🎨 Introduction to Bootstrap 5</h1>
+    <p>Make your websites beautiful and responsive the easy way!</p>
+  </header>
+
+  <nav class="lesson-navigation container my-4 d-flex justify-content-between">
+    <button class="btn btn-outline-primary" onclick="window.location.href='../All about Media types and emojis/media.html'">
+      ⬅️ Back to Media Lesson
+    </button>
+    <button class="btn btn-outline-success" onclick="window.location.href='../Bootstrap lesson/advanced-bootstrap.html'">
+      ➡️ Advanced Bootstrap Concepts
+    </button>
+  </nav>
+
+  <main class="container my-5">
+    <section id="intro">
+      <h2>💡 What is Bootstrap?</h2>
+      <p>Bootstrap is a free CSS framework that helps us design beautiful, responsive websites quickly. Instead of writing a lot of CSS, we use ready-made classes.</p>
+    </section>
+
+    <hr />
+
+    <section id="grid" class="mt-5">
+      <h2>🧱 Bootstrap Grid System</h2>
+      <p>The grid system uses <code>.row</code> and <code>.col</code> classes to create responsive layouts.</p>
+      <div class="row text-center">
+        <div class="col-md-4 bg-light border p-3">Column 1</div>
+        <div class="col-md-4 bg-info border p-3">Column 2</div>
+        <div class="col-md-4 bg-light border p-3">Column 3</div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="buttons" class="mt-5">
+      <h2>🎨 Buttons and Colors</h2>
+      <p>Bootstrap provides built-in button colors. Try clicking them!</p>
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-info">Info</button>
+    </section>
+
+    <hr />
+
+    <section id="navbar" class="mt-5">
+      <h2>📱 Navbar Example</h2>
+      <p>This is a simple Bootstrap navbar with a brand name and links.</p>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MySite</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <hr />
+
+    <section id="alerts" class="mt-5">
+      <h2>💬 Alert & Modal Examples</h2>
+      <p>Alerts show messages. Modals pop up for more info!</p>
+
+      <div class="alert alert-success" role="alert">
+        ✅ You’ve learned a lot already — great job!
+      </div>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
+        Open Info Modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Bootstrap Modal</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>🎉 You just opened a Bootstrap modal — see how easy that was?</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="quiz" class="mt-5">
+      <h2>🧠 Quick Quiz</h2>
+      <p>Let’s test what you remember!</p>
+
+      <div id="quiz-container">
+        <p>1️⃣ What is Bootstrap mainly used for?</p>
+        <button class="btn btn-outline-secondary quiz-btn" data-correct="true">Making websites responsive and stylish</button>
+        <button class="btn btn-outline-secondary quiz-btn">Creating databases</button>
+        <button class="btn btn-outline-secondary quiz-btn">Writing backend code</button>
+
+        <p class="mt-4">2️⃣ What version of Bootstrap are we using?</p>
+        <button class="btn btn-outline-secondary quiz-btn">4</button>
+        <button class="btn btn-outline-secondary quiz-btn" data-correct="true">5</button>
+        <button class="btn btn-outline-secondary quiz-btn">6</button>
+      </div>
+
+      <div id="quiz-result" class="mt-3 fw-bold"></div>
+      <button id="resetQuiz" class="btn btn-warning mt-3">🔄 Reset Quiz</button>
+    </section>
+  </main>
+
+  <footer class="text-center py-3 bg-light mt-5">
+    <p>© 2025 Fun HTML Lessons for Kids | Created by Sheila 💻</p>
+  </footer>
+
+  <!-- ✅ Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ✅ Custom JS -->
+  <script src="bootstrap.js"></script>
+</body>
+</html>
