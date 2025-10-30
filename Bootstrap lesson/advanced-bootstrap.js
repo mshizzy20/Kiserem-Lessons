@@ -15,3 +15,4 @@ document.querySelectorAll('.quiz-btn').forEach(button => {
 document.getElementById('resetQuiz').addEventListener('click', () => {
   document.getElementById('quiz-result').textContent = "";
 });
+// end of file
